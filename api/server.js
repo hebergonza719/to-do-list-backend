@@ -15,7 +15,7 @@ server.use(express.json());
 
 server.use('/api/users', authenticate, usersRouter);
 server.use('/api/auth', authRouter);
-server.use('/api/tasks', tasksRouter);
+server.use('/api/tasks', authenticate, tasksRouter);
 
 server.get('/', (req, res, next) => {
   res.status(200).json({ api: "running "});
