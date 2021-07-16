@@ -10,7 +10,10 @@ const authRouter = require('../auth/auth-router');
 const server = express();
 
 server.use(helmet());
-server.use(cors());
+server.use(cors({
+  origin: process.env.CORS_ORIGIN_URL,
+  credentials: true
+}))
 server.use(express.json());
 
 server.use('/api/users', authenticate, usersRouter);

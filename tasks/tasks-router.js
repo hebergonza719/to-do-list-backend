@@ -37,7 +37,7 @@ router.post('/', (req, res, next) => {
       res.status(200).json(task);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to create new scheme' });
+      res.status(500).json({ message: err.message });
     });
 });
 
