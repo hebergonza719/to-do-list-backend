@@ -5,7 +5,7 @@ require('dotenv').config();
 module.exports = {
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: process.env.HEROKU_POSTGRESQL_PUCE_URL,
     useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
