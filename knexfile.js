@@ -3,7 +3,7 @@ require('dotenv').config();
 
 
 module.exports = {
-  development: {
+  production: {
     client: 'pg',
     connection: process.env.HEROKU_POSTGRESQL_PUCE_URL,
     useNullAsDefault: true,
