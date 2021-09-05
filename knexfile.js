@@ -14,7 +14,7 @@ module.exports = {
   }
 };
 
-// {
+// module.exports = {
 //   development: {
 //     client: 'pg',
 //     connection: { 
@@ -28,4 +28,4 @@ module.exports = {
 //     },
 //     seeds: { directory: './database/seeds' },
 //   }
-// }
+// };

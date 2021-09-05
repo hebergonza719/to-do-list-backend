@@ -31,13 +31,25 @@ exports.up = function(knex) {
           .defaultTo(false);
         
       })
+      .createTable('guest_tasks', table => {
+        table.increments();
+
+        table.string('description', 255).notNullable();
+
+        table.string('notes', 255);
+        
+        table.boolean('completed')
+          .notNullable()
+          .defaultTo(false);
+      })
   );
 };
 
 exports.down = function(knex, Promise) {
   return (
     knex.schema
-      .dropTableIfExists('users')
       .dropTableIfExists('tasks')
+      .dropTableIfExists('users')
+      .dropTableIfExists('guest_tasks')
     )
 };
