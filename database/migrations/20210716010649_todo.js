@@ -48,7 +48,8 @@ exports.up = function(knex) {
 exports.down = function(knex, Promise) {
   return (
     knex.schema
-      .dropTableIfExists('users')
       .dropTableIfExists('tasks')
+      .dropTableIfExists('users')
+      .dropTableIfExists('guest_tasks')
     )
 };
